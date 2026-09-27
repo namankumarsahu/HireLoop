@@ -1,4 +1,4 @@
-# ScreenScribe
+# HireLoop
 
 Track 4 submission for the WhipScribe Buildathon.
 
