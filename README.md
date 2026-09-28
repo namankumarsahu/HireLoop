@@ -4,7 +4,7 @@ Track 4 submission for the WhipScribe Buildathon.
 
 HireLoop is an AI-powered screening workflow that converts a recruiter screening call into a structured candidate scorecard and automatically stores it in Airtable.
 
-🚀 Live Demo
+##🚀 Live Demo
 
 Live application:
 https://hire-loop-sooty.vercel.app/
@@ -69,17 +69,7 @@ endpoint contract.
 
 ## Architecture
 
-HireLoop/
-├── README.md
-├── frontend/
-├── backend/
-└── docs/
-    ├── problem.md
-    ├── workflow.md
-    ├── demo-script.md
-    └── vision.md
-
-
+```text
 Browser (React)
       |
       | POST /api/calls
@@ -87,7 +77,7 @@ Browser (React)
       v
 Express API
       |
-      | multipart upload
+      | Upload recording
       v
 WhipScribe API
       |
@@ -103,8 +93,10 @@ Scorecard Builder
 Airtable API
       |
       v
-Scorecards table
+Scorecards Table
+```
 
+See [`docs/workflow.md`](docs/workflow.md) for the full workflow and API details.
 
 ## Running Locally
 
