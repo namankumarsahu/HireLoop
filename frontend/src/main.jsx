@@ -156,15 +156,32 @@ function AirtableStatus({ call }) {
   const a = call.airtable;
   if (!a) return null;
 
+  // Public Airtable Share-to-web URL
+  const AIRTABLE_PUBLIC_URL =
+    "https://airtable.com/appXeysoeLhEOnzXX/shrNVVRyOzVfY6zsv";
+
   return (
     <div className="card">
       <h2>3. Airtable</h2>
-      {a.skipped && <p className="muted">Skipped: {a.reason}</p>}
-      {a.error && <p className="error">Could not write to Airtable: {a.error}</p>}
+
+      {a.skipped && (
+        <p className="muted">Skipped: {a.reason}</p>
+      )}
+
+      {a.error && (
+        <p className="error">
+          Could not write to Airtable: {a.error}
+        </p>
+      )}
+
       {!a.skipped && !a.error && (
         <p>
           Row added to the Scorecards base —{" "}
-          <a href={a.baseUrl} target="_blank" rel="noreferrer">
+          <a
+            href={AIRTABLE_PUBLIC_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             open in Airtable
           </a>
         </p>
