@@ -7,7 +7,13 @@ HireLoop is an AI-powered screening workflow that converts a recruiter screening
 🚀 Live Demo
 
 Live application:
-https://hire-loop-nvr34pdlr-naman-sahus-projects-a4949ddc.vercel.app/
+https://hire-loop-sooty.vercel.app/
+
+### Airtable Output
+
+Generated scorecards are automatically stored in Airtable.
+
+[View Public Airtable Scorecards](https://airtable.com/appXeysoeLhEOnzXX/shrNVVRyOzVfY6zsv/tblYjbN3hKueEJZWX/viwhNuA6CMIN7ytBy)
 
 ## Problem
 
@@ -63,30 +69,42 @@ endpoint contract.
 
 ## Architecture
 
-Browser (React)
-  |
-  | POST /api/calls  (multipart: recording + candidate/role fields)
-  v
-Express API
-  |
-  | multipart upload
-  v
-WhipScribe API
-  |  POST /api/v1/transcribe
-  |  GET  /api/v1/jobs/:id
-  |  GET  /api/v1/jobs/:id/result?format=json
-  |  GET  /api/v1/jobs/:id/insights
-  v
-Scorecard builder (LLM, JSON schema)
-  |
-  v
-Airtable API
-  |  POST https://api.airtable.com/v0/{baseId}/{table}
-  v
-New row in the Scorecards base
+HireLoop/
+├── README.md
+├── frontend/
+├── backend/
+└── docs/
+    ├── problem.md
+    ├── workflow.md
+    ├── demo-script.md
+    └── vision.md
 
-See docs/workflow.md for the full diagram and the exact list of API calls
-made per submission.
+
+Browser (React)
+      |
+      | POST /api/calls
+      | multipart: recording + candidate/role fields
+      v
+Express API
+      |
+      | multipart upload
+      v
+WhipScribe API
+      |
+      | POST /api/v1/transcribe
+      | GET /api/v1/jobs/:id
+      | GET /api/v1/jobs/:id/result?format=json
+      | GET /api/v1/jobs/:id/insights
+      v
+Scorecard Builder
+      |
+      | Structured JSON
+      v
+Airtable API
+      |
+      v
+Scorecards table
+
 
 ## Running Locally
 
@@ -298,7 +316,7 @@ The goal is not to replace the recruiter's judgment, but to remove the manual wo
 
 Live application:
 
-https://hire-loop-nvr34pdlr-naman-sahus-projects-a4949ddc.vercel.app/
+https://hire-loop-sooty.vercel.app/
 
 The primary demo flow is:
 
