@@ -9,6 +9,10 @@ HireLoop is an AI-powered screening workflow that converts a recruiter screening
 Live application:
 https://hire-loop-sooty.vercel.app/
 
+## 🎥 Demo Video
+
+[Loom Demo – HireLoop](https://www.loom.com/share/c3b2158f6b664ca1bbe42624c780e84f)
+
 ### Airtable Output
 
 Generated scorecards are automatically stored in Airtable.
