@@ -4,12 +4,12 @@ Track 4 submission for the WhipScribe Buildathon.
 
 HireLoop is an AI-powered screening workflow that converts a recruiter screening call into a structured candidate scorecard and automatically stores it in Airtable.
 
-# 🚀 Live Demo
+🚀 Live Demo
 
 Live application:
 https://hire-loop-nvr34pdlr-naman-sahus-projects-a4949ddc.vercel.app/
 
-# Problem
+## Problem
 
 Recruiters often finish a screening call with useful information trapped inside a recording. Turning that conversation into a structured candidate scorecard is usually manual, time-consuming, and easy to delay or skip.
 
@@ -21,7 +21,7 @@ The first target user is a recruiter or hiring manager who conducts screening ca
 
 Instead of manually reviewing a recording and writing a scorecard, HireLoop turns the conversation into a structured, reviewable record that can be added directly to the team's existing Airtable workflow.
 
-# What the MVP Does
+## What the MVP Does
 
 The recruiter uploads a screening call recording and provides the candidate name, role, and interviewer.
 
@@ -61,7 +61,7 @@ The WhipScribe API is the essential first step — nothing downstream works
 without a real transcript. See the official API docs for the current
 endpoint contract.
 
-# Architecture
+## Architecture
 
 Browser (React)
   |
@@ -88,7 +88,7 @@ New row in the Scorecards base
 See docs/workflow.md for the full diagram and the exact list of API calls
 made per submission.
 
-Running Locally
+## Running Locally
 
 Requirements
 
@@ -167,7 +167,7 @@ Backend: any Node host (Render, Railway, Fly.io) — set the same env vars.
 Frontend: any static host (Vercel, Netlify) — set VITE_API_BASE to the
 deployed backend's /api URL at build time.
 
-# Deployment
+## Deployment
 
 Frontend — Vercel
 
@@ -205,13 +205,13 @@ Frontend
 
 VITE_API_BASE=https://hireloop-4v5y.onrender.com/api
 
-Security
+## Security
 
 Never put WHIPSCRIBE_API_KEY, AIRTABLE_API_KEY, or AI_API_KEY in the
 frontend. They must remain server-side, which is why every third-party call
 happens from the Express backend, not the browser.
 
-Key Engineering Challenges
+## Key Engineering Challenges
 
 1. Handling an Asynchronous Transcription API
 
@@ -257,7 +257,7 @@ docs/demo-script.md — two-minute demo plan
 
 docs/vision.md — one-year vision
 
-What I Learned
+## What I Learned
 
 Designing around an asynchronous transcription API (submit → poll →
 fetch).
@@ -274,7 +274,7 @@ Designing for graceful degradation: the product still produces a usable
 scorecard with no LLM key, and still shows the scorecard even if the
 Airtable write fails.
 
-Future Vision
+## Future Vision
 
 The current MVP focuses on turning one screening call into one structured candidate scorecard. The longer-term vision is to make HireLoop part of a recruiter's existing hiring workflow.
 
@@ -294,9 +294,9 @@ Future versions could integrate with ATS platforms and other recruiting tools, a
 
 The goal is not to replace the recruiter's judgment, but to remove the manual work required to turn an interview conversation into structured, usable hiring information.
 
-Demo
+## Demo
 
-# Live application:
+Live application:
 
 https://hire-loop-nvr34pdlr-naman-sahus-projects-a4949ddc.vercel.app/
 
