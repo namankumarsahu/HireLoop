@@ -4,7 +4,7 @@ Track 4 submission for the WhipScribe Buildathon.
 
 HireLoop is an AI-powered screening workflow that converts a recruiter screening call into a structured candidate scorecard and automatically stores it in Airtable.
 
-##🚀 Live Demo
+## 🚀 Live Demo
 
 Live application:
 https://hire-loop-sooty.vercel.app/
